@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guilherme | Front-end Developer</title>
+
+  <!-- CSS -->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background: #0f172a;
+      color: #e5e7eb;
+    }
+
+    header {
+      background: #020617;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      font-size: 22px;
+      color: #38bdf8;
+    }
+
+    nav a {
+      color: #e5e7eb;
+      margin-left: 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #38bdf8;
+    }
+
+    .hero {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .hero h2 {
+      font-size: 32px;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      max-width: 600px;
+      margin: auto;
+      margin-bottom: 30px;
+      color: #cbd5f5;
+    }
+
+    .hero button {
+      padding: 15px 30px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      background: #38bdf8;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .hero button:hover {
+      background: #0ea5e9;
+    }
+
+    section {
+      padding: 50px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: #020617;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease;
+    }
+
+    .card.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .card {
+      background: #020617;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      color: #38bdf8;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #020617;
+      margin-top: 50px;
+      font-size: 14px;
+    }
+
+    /* RESPONSIVO */
+    @media (max-width: 600px) {
+      .hero h2 {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Guilherme Dev</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <h2>Front-end Developer</h2>
+    <p>
+      Crio sites modernos, rápidos e responsivos usando HTML, CSS e JavaScript.
+      Ideal para empresas e profissionais que querem presença online.
+    </p>
+    <button onclick="mostrarMensagem()">Fale comigo</button>
+  </section>
+
+  <section id="projetos">
+    <h2 style="text-align:center; margin-bottom:30px">Projetos</h2>
+
+    <div class="cards">
+      <div class="card">
+        <h3>Site Institucional</h3>
+        <p>Site profissional para empresas com layout moderno.</p>
+      </div>
+
+      <div class="card">
+        <h3>Landing Page</h3>
+        <p>Página focada em conversão e vendas.</p>
+      </div>
+
+      <div class="card">
+        <h3>Sistema Web</h3>
+        <p>Interface com JavaScript e integração com APIs.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contato">
+    <h2 style="text-align:center; margin-bottom:20px">Contato</h2>
+
+    <!-- FORMULÁRIO FUNCIONAL -->
+    <form action="https://formsubmit.co/guilheremoura583@email.com" method="POST" style="max-width:400px; margin:auto; display:flex; flex-direction:column; gap:10px">
+      <input type="text" name="name" placeholder="Seu nome" required style="padding:10px; border-radius:6px; border:none">
+      <input type="email" name="email" placeholder="Seu email" required style="padding:10px; border-radius:6px; border:none">
+      <textarea name="message" placeholder="Sua mensagem" required style="padding:10px; border-radius:6px; border:none"></textarea>
+      <button type="submit" style="padding:12px; background:#38bdf8; border:none; border-radius:6px; font-weight:bold">Enviar</button>
+    </form>
+
+    <p style="text-align:center; margin-top:15px">Ou fale direto pelo WhatsApp</p>
+  </section>
+
+  <footer>
+    © 2025 - Guilherme | Front-end Developer
+  </footer>
+
+  <!-- BOTÃO WHATSAPP FLUTUANTE -->
+  <a href="https://wa.me/5542991330778" class="whatsapp" target="_blank">💬</a>
+
+  <style>
+    .whatsapp {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25d366;
+      color: #fff;
+      font-size: 26px;
+      padding: 15px;
+      border-radius: 50%;
+      text-decoration: none;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+      z-index: 999;
+    }
+
+    .whatsapp:hover {
+      background: #1ebe5d;
+    }
+  </style>
+
+  <script>
+    function mostrarMensagem() {
+      alert('Obrigado pelo contato! Em breve retornarei.');
+    }
+
+    // ANIMAÇÃO AO ROLAR
+    const cards = document.querySelectorAll('.card');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    });
+
+    cards.forEach(card => observer.observe(card));
+
+    // SIMULAÇÃO DE VENDA (DEMO)
+    console.log('Pacote Profissional: Site + WhatsApp + Formulário + Animações');
+  </script>
+
+</body>
+</html>
